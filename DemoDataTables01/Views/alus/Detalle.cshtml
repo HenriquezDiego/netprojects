@@ -1,0 +1,184 @@
+﻿@model DemoDataTables01.Models.alu
+
+@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_ModalLayout.cshtml";
+}
+
+
+<div class="col-md-4">
+    <h4 class="text-center">Alumno: @Model.ToString()</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cod_carr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cod_carr)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.activo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.activo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.curso_asp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.curso_asp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proceso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proceso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_pro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_pro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_nac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_nac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dui)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dui)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.recibo_ins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.recibo_ins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ciclo_in)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ciclo_in)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.año_in)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.año_in)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cod_carr_old)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cod_carr_old)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carnet_old)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carnet_old)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.equi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.equi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+            <br />
+        </dd>
+
+        <dd>
+            <br />
+            <button class="btn btn-default btn-sm" aria-label="Justify"> @Html.ActionLink("  ", "Edit", new { id = Model.carnet }, new { @class = "glyphicon glyphicon-pencil " }) </button>
+   
+        
+        </dd>
+        
+
+    </dl>
+</div>
+

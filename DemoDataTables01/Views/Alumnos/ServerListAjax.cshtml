@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Lista de alumnos";
+}
+
+
+<div class="jumbotron">
+    <h1>Alumnos Sede Ilobasco</h1>
+</div>
+
+<h3>Server Side Processing</h3>
+
+<table id="tbAlumnos3" class="table table-striped table-bordered table-hover text-nowrap">
+    <thead>
+        <tr>
+            <th>Carnet</th>
+            <th>Apellido 1</th>
+            <th>Apellido 2</th>
+            <th>Apellido 3</th>
+            <th>Nombre 1</th>
+            <th>Nombre 2</th>
+            <th>Cod Carrera</th>
+            <th>Activo</th>
+            <th>Curso ASP</th>
+            <th>Proceso</th>
+            <th>Fecha Pro</th>
+            <th>Fecha Nac</th>
+            <th>DUI</th>
+            <th>NIT</th>
+            <th>Recibo Inst</th>
+            <th>Ciclo In</th>
+            <th>Año In</th>
+            <th>Cod Carr Old</th>
+            <th>Carnet Old</th>
+            <th>Equi</th>
+            <th>Sexo</th>
+        </tr>
+    </thead>    
+</table>
+
+<!-- Normal -->
+@*<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />*@
+
+<!-- Bootstrap 3 -->
+<link href="//cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+@section scripts{
+    <!-- Normal-->
+    @*<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>*@
+
+    <!-- Bootstrap 3 -->
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+
+    
+    <script>
+
+        $(document).ready(function myfunction() {
+           
+
+            $("#tbAlumnos3").DataTable(
+                {
+                    "scrollX": "true",
+                    "ajax": {
+                        "url": "/Alumnos/GetListServer",
+                        "type": "POST",
+                        "datatype": "json" 
+                    },
+                    "columns": [
+                        { "data": "carnet", "name": "carnet" },
+                        { "data": "apellido1", "name": "apellido1"},
+                        { "data": "apellido2", "name": "apellido2" },
+                        { "data": "apellido3", "name": "apellido3" },
+                        { "data": "nombre1" , "name": "nombre1" },
+                        { "data": "nombre2" , "name": "nombre2" },
+                        { "data": "cod_carr", "name": "cod_carr" },
+                        { "data": "activo", "name": "activo"  },
+                        { "data": "curso_asp", "name": "curso_asp"  },
+                        { "data": "proceso", "name": "proceso" },
+                        { "data": "fecha_pro", "name": "fecha_pro" },
+                        {
+                            "data": "fecha_nac", "name": "fecha_nac", "type": "date",
+                            "render": function (value) {
+                                return ToJavaScritDateTime(value);
+                            }                        
+                        },
+                        { "data": "dui", "name": "dui" },
+                        { "data": "nit", "name": "nit"},
+                        { "data": "recibo_ins", "name": "recibo_ins" },
+                        { "data": "ciclo_in", "name": "ciclo_in" },
+                        { "data": "año_in", "name": "año_in" },
+                        { "data": "cod_carr_old", "name": "cod_carr_old"},
+                        { "data": "carnet_old", "name": "carnet_old" },
+                        { "data": "equi" , "name": "equi" },
+                        { "data": "sexo" , "name": "sexo" }
+                    ],
+                    "serverSide": "true",
+                    "order": [0, "asc"],
+                    "processing": "true",
+                    "language": {
+                        "processing": "    Procesando... Por favor espere.    "
+                    }
+                });
+        });
+
+        function ToJavaScritDateTime(value) {
+            if (value === null) return "";
+
+            var pattern = /Date\(([^)]+)\)/;
+            var results = pattern.exec(value);
+            var dt = new Date(parseFloat(results[1]));
+            var day = ("0" + dt.getDate()).slice(-2);
+            var month = ("0" + (dt.getMonth() + 1)).slice(-2);
+            return day + "/" + month + "/" + dt.getFullYear();
+        }
+    </script>
+}

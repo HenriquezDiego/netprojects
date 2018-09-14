@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NOTAS_WEB_CRIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="alu">
+          <Key>
+            <PropertyRef Name="carnet" />
+          </Key>
+          <Property Name="carnet" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="apellido1" Type="nvarchar" MaxLength="15" />
+          <Property Name="apellido2" Type="nvarchar" MaxLength="15" />
+          <Property Name="apellido3" Type="nvarchar" MaxLength="15" />
+          <Property Name="nombre1" Type="nvarchar" MaxLength="30" />
+          <Property Name="nombre2" Type="nvarchar" MaxLength="30" />
+          <Property Name="cod_carr" Type="int" />
+          <Property Name="activo" Type="int" />
+          <Property Name="curso_asp" Type="int" />
+          <Property Name="proceso" Type="int" />
+          <Property Name="fecha_pro" Type="datetime" />
+          <Property Name="fecha_nac" Type="datetime" />
+          <Property Name="dui" Type="nchar" MaxLength="20" />
+          <Property Name="nit" Type="nchar" MaxLength="20" />
+          <Property Name="recibo_ins" Type="int" />
+          <Property Name="ciclo_in" Type="int" />
+          <Property Name="año_in" Type="int" />
+          <Property Name="cod_carr_old" Type="int" />
+          <Property Name="carnet_old" Type="nvarchar" MaxLength="11" />
+          <Property Name="equi" Type="bit" />
+          <Property Name="sexo" Type="int" />
+        </EntityType>
+        <EntityContainer Name="NOTAS_WEB_CRIModelStoreContainer">
+          <EntitySet Name="alu" EntityType="Self.alu" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NOTAS_WEB_CRIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="alu">
+          <Key>
+            <PropertyRef Name="carnet" />
+          </Key>
+          <Property Name="carnet" Type="String" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="apellido1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="apellido2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="apellido3" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="nombre1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="nombre2" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="cod_carr" Type="Int32" />
+          <Property Name="activo" Type="Int32" />
+          <Property Name="curso_asp" Type="Int32" />
+          <Property Name="proceso" Type="Int32" />
+          <Property Name="fecha_pro" Type="DateTime" Precision="3" />
+          <Property Name="fecha_nac" Type="DateTime" Precision="3" />
+          <Property Name="dui" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="nit" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="recibo_ins" Type="Int32" />
+          <Property Name="ciclo_in" Type="Int32" />
+          <Property Name="año_in" Type="Int32" />
+          <Property Name="cod_carr_old" Type="Int32" />
+          <Property Name="carnet_old" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="equi" Type="Boolean" />
+          <Property Name="sexo" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="BDModels" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="alu" EntityType="Self.alu" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NOTAS_WEB_CRIModelStoreContainer" CdmEntityContainer="BDModels">
+          <EntitySetMapping Name="alu">
+            <EntityTypeMapping TypeName="NOTAS_WEB_CRIModel.alu">
+              <MappingFragment StoreEntitySet="alu">
+                <ScalarProperty Name="carnet" ColumnName="carnet" />
+                <ScalarProperty Name="apellido1" ColumnName="apellido1" />
+                <ScalarProperty Name="apellido2" ColumnName="apellido2" />
+                <ScalarProperty Name="apellido3" ColumnName="apellido3" />
+                <ScalarProperty Name="nombre1" ColumnName="nombre1" />
+                <ScalarProperty Name="nombre2" ColumnName="nombre2" />
+                <ScalarProperty Name="cod_carr" ColumnName="cod_carr" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+                <ScalarProperty Name="curso_asp" ColumnName="curso_asp" />
+                <ScalarProperty Name="proceso" ColumnName="proceso" />
+                <ScalarProperty Name="fecha_pro" ColumnName="fecha_pro" />
+                <ScalarProperty Name="fecha_nac" ColumnName="fecha_nac" />
+                <ScalarProperty Name="dui" ColumnName="dui" />
+                <ScalarProperty Name="nit" ColumnName="nit" />
+                <ScalarProperty Name="recibo_ins" ColumnName="recibo_ins" />
+                <ScalarProperty Name="ciclo_in" ColumnName="ciclo_in" />
+                <ScalarProperty Name="año_in" ColumnName="año_in" />
+                <ScalarProperty Name="cod_carr_old" ColumnName="cod_carr_old" />
+                <ScalarProperty Name="carnet_old" ColumnName="carnet_old" />
+                <ScalarProperty Name="equi" ColumnName="equi" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

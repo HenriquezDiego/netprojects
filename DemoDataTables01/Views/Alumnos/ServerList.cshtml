@@ -1,0 +1,101 @@
+﻿@model List<DemoDataTables01.Models.alu>
+@{
+    ViewBag.Title = "Lista de alumnos";
+}
+
+
+<div class="jumbotron">
+    <h1>Alumnos Sede Ilobasco</h1>
+</div>
+
+<h3 class="text-center">Server List Normal</h3>
+
+<div id="circle">
+    <strong></strong>
+</div>
+
+
+<div class="row">
+
+
+    <div class="col-md-8">
+
+        <table id="tbAlumnos" class="table table-striped table-bordered table-hover text-nowrap" hidden="hidden">
+            <thead>
+                <tr>
+                    <th>Carnet</th>
+                    <th>Apellido 1</th>
+                    <th>Nombre 1</th>
+                    <th>Cod Carrera</th>
+                    <th>Fecha Nac</th>
+                    <th>Sexo</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var a in Model)
+                {
+                    <tr>
+                        <td>@a.carnet</td>
+                        <td>@a.apellido1</td>
+                        <td>@a.nombre1</td>
+                        <td>@a.cod_carr</td>
+                        <td>@a.fecha_nac</td>
+                        <td>@a.sexo</td>
+
+                    </tr>
+                }
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+    <div class="col-md-4">
+
+    </div>
+
+</div>
+
+<!-- Normal -->
+@*<link href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />*@
+
+<!-- Bootstrap 3 -->
+<link href="//cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+@section scripts{
+    <!-- Normal-->
+    @*<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>*@
+
+    <!-- Bootstrap 3 -->
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script src="~/Scripts/circle-progress.js"></script>
+
+       <script>
+
+           //function progress() {
+           //    $('#circle').circleProgress({
+           //    }).on('circle-animation-progress', function (event, progress) {
+           //        $(this).find('strong').html(Math.round(100 * progress) + '<i>%</i>');
+
+           //    });
+
+           //}
+
+
+        $('#tbAlumnos').DataTable();
+
+        $(document).ready(function myfunction() {
+
+            $("#tbAlumnos").show();
+
+
+        });
+
+
+
+    </script>
+
+}
